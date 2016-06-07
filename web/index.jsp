@@ -35,7 +35,7 @@
             <div class="form-group">
               <input type="password" placeholder="Contraseña" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Entrar</button>
+              <a href="inicio.jsp"<button type="submit" class="btn btn-success">Entrar</button></a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
