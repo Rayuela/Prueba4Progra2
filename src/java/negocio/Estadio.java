@@ -1,5 +1,7 @@
 package negocio;
 
+import accesodato.Conexion;
+
 /**
  *
  * @author Anibal
@@ -7,6 +9,7 @@ package negocio;
 public class Estadio {
     private int estadio_id;
     private String nombre;
+        Conexion con;
 
     public int getEstadio_id() {
         return estadio_id;
