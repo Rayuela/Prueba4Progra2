@@ -1,45 +1,57 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import negocio.Jugador;
 
 /**
  *
  * @author Administrador
  */
 public class ServletJugador extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletJugador</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletJugador at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            if(request.getParameter("guardar") != null){
+               String nombre=request.getParameter("nombre");
+               String apepat=request.getParameter("apepat");
+               String apemat=request.getParameter("apemat");
+               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               int equipo_id=Integer.parseInt("equipo_id");
+               Jugador playd=new Jugador();
+               playd.setNombre(nombre);
+               playd.setApepat(apepat);
+               playd.setEquipo_id(equipo_id);
+               playd.setFecha_nacimiento(fecha_nacimiento);
+               playd.save();
+               response.sendRedirect("inicio.jsp");
+               
+           }else if(request.getParameter("editar") != null){
+               int jugador_id=Integer.parseInt(request.getParameter("jugador_id"));
+               String nombre=request.getParameter("nombre"); 
+               String apepat=request.getParameter("apepat");
+               String apemat=request.getParameter("apemat");
+               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               int equipo_id=Integer.parseInt("equipo_id");
+               Jugador playd=new Jugador();
+               playd.setJugador_id(jugador_id);
+               playd.setNombre(nombre);
+               playd.setApepat(apepat);
+               playd.setApemat(apemat);
+               playd.setFecha_nacimiento(fecha_nacimiento);
+               playd.update();
+               response.sendRedirect("inicio.jsp");
+               
+           }else if(request.getParameter("eliminar") !=null){
+               int jugador_id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID"+jugador_id);
+               Jugador playd=new Jugador();
+               playd.delete();
+               response.sendRedirect("inicio.jsp");
+           }
         }
     }
 

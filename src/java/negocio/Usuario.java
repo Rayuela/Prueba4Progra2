@@ -44,14 +44,18 @@ public class Usuario {
     public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
+    
     public void save(){
         con.setInsertar("insert into Usuarios(usuario,clave,fecha_nacimiento) values('"+this.getUsuario()+"','"
                 +this.getClave()+"','"+this.getFecha_nacimiento()+"'");
     }
+    
     public void delete(){
         con.setInsertar("update Usuarios set='pasivo' where usuario_id='"+this.getUsuario_id()+"'");
     }
+    
     public void update(){
         con.setInsertar("update Usuarios set usuario'"+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"' where usuario_id'"+this.getUsuario_id()+"'");
     }
+    
 }

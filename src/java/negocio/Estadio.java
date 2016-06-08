@@ -27,5 +27,16 @@ public class Estadio {
         this.nombre = nombre;
     }
     
+    public void save(){
+        con.setInsertar("insert into Estadios(nombre) values('"+this.getNombre()+"'");
+    }
+    
+    public void delete(){
+        con.setInsertar("update Estadio set='pasivo' where estadio_id='"+this.getEstadio_id()+"'");
+    }
+    
+    public void update(){
+        con.setInsertar("update Estadios set usuario'"+this.getNombre()+"' where Estadio_id'"+this.getEstadio_id()+"'");
+    }
     
 }

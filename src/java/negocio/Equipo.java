@@ -1,5 +1,7 @@
 package negocio;
 
+import accesodato.Conexion;
+
 /**
  *
  * @author Anibal
@@ -8,6 +10,7 @@ public class Equipo {
     private int equipo_id;
     private String nombre;
     private int estadio_id;
+        Conexion con;
 
     public int getEquipo_id() {
         return equipo_id;
@@ -31,6 +34,19 @@ public class Equipo {
 
     public void setEstadio_id(int estadio_id) {
         this.estadio_id = estadio_id;
+    }
+    
+    public void save(){
+        con.setInsertar("insert into Equipos(nombre,estadio_id) values('"+this.getNombre()+"','"
+                +this.getEstadio_id()+"'");
+    }
+    
+    public void delete(){
+        con.setInsertar("update Equipos set='pasivo' where usuario_id='"+this.getEquipo_id()+"'");
+    }
+    
+    public void update(){
+        con.setInsertar("update Usuarios set Equipos'"+this.getNombre()+"',estadio_id'"+this.getEstadio_id()+"' where equipo_id'"+this.getEquipo_id()+"'");
     }
     
 }

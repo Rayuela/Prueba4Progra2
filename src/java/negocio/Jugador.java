@@ -71,15 +71,19 @@ public class Jugador {
     public void setCreado_por(String creado_por) {
         this.creado_por = creado_por;
     }
+    
     public void save(){
         con.setInsertar("insert into Usuarios(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por) values('"+this.getNombre()+"','"
                 +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"'");
     }
+    
     public void delete(){
         con.setInsertar("update Usuarios set='pasivo' where jugador_id='"+this.getJugador_id()+"'");
     }
+    
     public void update(){
         con.setInsertar("update Usuarios set usuario'"+this.getNombre()+"',clave'"+this.getApepat()+"',apemat'"+this.getApemat()+"',fecha_nacimiento'"
                 +this.getFecha_nacimiento()+"',creado_por'"+this.getCreado_por()+"' where jugador_id'"+this.getJugador_id()+"'");
     }
+    
 }

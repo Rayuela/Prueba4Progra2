@@ -22,7 +22,7 @@ public class ServletUsuario extends HttpServlet {
                Usuario user=new Usuario();
                user.setUsuario(usuario);
                user.setClave(clave);
-               user.setFecha_nacimiento("fecha_nacimiento");
+               user.setFecha_nacimiento(fecha_nacimiento);
                user.save();
                response.sendRedirect("inicio.jsp");
                
@@ -40,8 +40,8 @@ public class ServletUsuario extends HttpServlet {
                response.sendRedirect("inicio.jsp");
                
            }else if(request.getParameter("eliminar") !=null){
-               int id=Integer.parseInt(request.getParameter("eliminar"));
-               out.println("Eliminar ID"+id);
+               int usuario_id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID"+usuario_id);
                Usuario user=new Usuario();
                user.delete();
                response.sendRedirect("inicio.jsp");

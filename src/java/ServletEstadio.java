@@ -10,36 +10,40 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import negocio.Estadio;
 
 /**
  *
  * @author Administrador
  */
 public class ServletEstadio extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletEstadio</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletEstadio at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            if(request.getParameter("guardar") != null){
+               String nombre=request.getParameter("nombre");
+               Estadio stad=new Estadio();
+               stad.setNombre(nombre);
+               stad.save();
+               response.sendRedirect("inicio.jsp");
+               
+           }else if(request.getParameter("editar") != null){
+               int estadio_id=Integer.parseInt(request.getParameter("estadio_id"));
+               String nombre=request.getParameter("nombre"); 
+               Estadio stad=new Estadio();
+               stad.setEstadio_id(estadio_id);
+               stad.setNombre(nombre);
+               stad.update();
+               response.sendRedirect("inicio.jsp");
+               
+           }else if(request.getParameter("eliminar") !=null){
+               int estadio_id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID"+estadio_id);
+               Estadio stad=new Estadio();
+               stad.delete();
+               response.sendRedirect("inicio.jsp");
+           }
         }
     }
 
