@@ -22,7 +22,7 @@ public class Conexion {
         String driver = "com.mysql.jdbc.Driver";
         String user = "root";
         String pass = "";
-        String url = "jdbc:mysql://localhost:3306/Patata";
+        String url = "jdbc:mysql://localhost:3306/Prueba";
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, pass);
