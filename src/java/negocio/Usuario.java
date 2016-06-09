@@ -46,8 +46,8 @@ public class Usuario {
     }
     
     public void save(){
-        con.setInsertar("insert into Usuarios(usuario,clave,fecha_nacimiento) values('"+this.getUsuario()+"','"
-                +this.getClave()+"','"+this.getFecha_nacimiento()+"'");
+        con.setInsertar("insert into Usuarios(usuario,clave,fecha_nacimiento,estado) values('"+this.getUsuario()+"','"
+                +this.getClave()+"','"+this.getFecha_nacimiento()+"',activo'");
     }
     
     public void delete(){

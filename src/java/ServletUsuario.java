@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import negocio.Usuario;
  *
  * @author Administrador
  */
+@WebServlet(urlPatterns = {"/ServletUsuario"})
 public class ServletUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,7 +26,7 @@ public class ServletUsuario extends HttpServlet {
                user.setClave(clave);
                user.setFecha_nacimiento(fecha_nacimiento);
                user.save();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("usuarios/index.jsp");
                
            }else if(request.getParameter("editar") != null){
                int usuario_id=Integer.parseInt(request.getParameter("usuario_id"));
