@@ -21,13 +21,16 @@ public class ServletJugador extends HttpServlet {
                String apemat=request.getParameter("apemat");
                String fecha_nacimiento=request.getParameter("fecha_nacimiento");
                int equipo_id=Integer.parseInt("equipo_id");
+               String creado_por=request.getParameter("creado_por");
                Jugador playd=new Jugador();
                playd.setNombre(nombre);
                playd.setApepat(apepat);
+               playd.setApemat(apemat);
                playd.setEquipo_id(equipo_id);
                playd.setFecha_nacimiento(fecha_nacimiento);
+               playd.setCreado_por(creado_por);
                playd.save();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("jugadores/index.jsp");
                
            }else if(request.getParameter("editar") != null){
                int jugador_id=Integer.parseInt(request.getParameter("jugador_id"));

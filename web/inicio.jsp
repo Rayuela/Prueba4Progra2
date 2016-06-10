@@ -36,6 +36,8 @@
         <br><br><br><br><br>
     <center>
         <a href="usuarios/index.jsp">Usuarios</a>
+        <br>
+        <a href="jugadores/index.jsp">Jugadores</a>
     </center>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="template/js/bootstrap.min.js"></script>

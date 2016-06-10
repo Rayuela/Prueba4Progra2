@@ -16,6 +16,10 @@ public class Jugador {
     private String creado_por;
         Conexion con;
         
+        public Jugador(){
+            con= new Conexion();
+}
+        
     public int getJugador_id() {
         return jugador_id;
     }
@@ -73,16 +77,16 @@ public class Jugador {
     }
     
     public void save(){
-        con.setInsertar("insert into Usuarios(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por) values('"+this.getNombre()+"','"
-                +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"'");
+        con.setInsertar("insert into Jugadores(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por) values('"+this.getNombre()+"','"
+                +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"','activo')");
     }
     
     public void delete(){
-        con.setInsertar("update Usuarios set='pasivo' where jugador_id='"+this.getJugador_id()+"'");
+        con.setInsertar("update Jugadores set='pasivo' where jugador_id='"+this.getJugador_id()+"'");
     }
     
     public void update(){
-        con.setInsertar("update Usuarios set usuario'"+this.getNombre()+"',clave'"+this.getApepat()+"',apemat'"+this.getApemat()+"',fecha_nacimiento'"
+        con.setInsertar("update Usuarios set Jugadores'"+this.getNombre()+"',clave'"+this.getApepat()+"',apemat'"+this.getApemat()+"',fecha_nacimiento'"
                 +this.getFecha_nacimiento()+"',creado_por'"+this.getCreado_por()+"' where jugador_id'"+this.getJugador_id()+"'");
     }
     
