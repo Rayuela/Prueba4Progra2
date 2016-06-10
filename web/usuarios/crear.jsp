@@ -42,7 +42,7 @@
                 <td>CLAVE</td><td><input type="text" name="clave"></td>
             </tr>
              <tr>
-                <td>FECHA_NACIMIENTO</td><td><input type="text" name="fn"></td>
+                <td>FECHA_NACIMIENTO</td><td><input type="date" name="fn"></td>
             </tr>
             <tr>
                 <td><input type="submit" name="guardar" value="Guardar"></td>

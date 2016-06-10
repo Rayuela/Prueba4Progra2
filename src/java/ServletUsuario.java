@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +10,6 @@ import negocio.Usuario;
  *
  * @author Administrador
  */
-@WebServlet(urlPatterns = {"/ServletUsuario"})
 public class ServletUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,7 +18,7 @@ public class ServletUsuario extends HttpServlet {
            if(request.getParameter("guardar") != null){
                String usuario=request.getParameter("usuario");
                String clave=request.getParameter("clave");
-               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               String fecha_nacimiento=request.getParameter("fn");
                Usuario user=new Usuario();
                user.setUsuario(usuario);
                user.setClave(clave);
@@ -32,21 +30,21 @@ public class ServletUsuario extends HttpServlet {
                int usuario_id=Integer.parseInt(request.getParameter("usuario_id"));
                String usuario=request.getParameter("usuario"); 
                String clave=request.getParameter("clave");
-               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               String fecha_nacimiento=request.getParameter("fn");
                Usuario user=new Usuario();
                user.setUsuario_id(usuario_id);
                user.setUsuario(usuario);
                user.setClave(clave);
                user.setFecha_nacimiento(fecha_nacimiento);
                user.update();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("usuarios/index.jsp");
                
            }else if(request.getParameter("eliminar") !=null){
                int usuario_id=Integer.parseInt(request.getParameter("eliminar"));
                out.println("Eliminar ID"+usuario_id);
                Usuario user=new Usuario();
                user.delete();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("usuarios/index.jsp");
            }
         }
     }

@@ -11,8 +11,11 @@ public class Usuario {
     private String usuario;
     private String clave;
     private String fecha_nacimiento;
-        Conexion con;
-
+    Conexion con;
+    
+        public Usuario(){
+            con = new Conexion();
+        }
     public int getUsuario_id() {
         return usuario_id;
     }
@@ -47,7 +50,7 @@ public class Usuario {
     
     public void save(){
         con.setInsertar("insert into Usuarios(usuario,clave,fecha_nacimiento,estado) values('"+this.getUsuario()+"','"
-                +this.getClave()+"','"+this.getFecha_nacimiento()+"',activo'");
+                +this.getClave()+"','"+this.getFecha_nacimiento()+"','activo')");
     }
     
     public void delete(){
@@ -55,7 +58,7 @@ public class Usuario {
     }
     
     public void update(){
-        con.setInsertar("update Usuarios set usuario'"+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"' where usuario_id'"+this.getUsuario_id()+"'");
+        con.setInsertar("update Usuarios set='activo' where usuario_id='"+this.getUsuario_id()+'"'+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"'");
     }
     
 }
