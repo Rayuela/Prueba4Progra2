@@ -35,7 +35,7 @@ public class Estadio {
     }
     
     public void delete(){
-        con.setInsertar("update Estadio set='pasivo' where estadio_id='"+this.getEstadio_id()+"'");
+        con.setInsertar("delete from Estadios where estadio_id="+this.getEstadio_id()+"");
     }
     
     public void update(){
