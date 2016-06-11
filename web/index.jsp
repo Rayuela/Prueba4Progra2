@@ -28,14 +28,15 @@
           <a class="navbar-brand" href="#">Prueba 3 Progra 2</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right" method="pos" action="ServletLogin">
             <div class="form-group">
-              <input type="text" placeholder="Usuario" class="form-control">
+              <input type="text" placeholder="Usuario" name="usuario"class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Contraseña" class="form-control">
+              <input type="password" placeholder="Contraseña" name="contraseña" class="form-control">
             </div>
-              <a href="inicio.jsp"<button type="submit" class="btn btn-success">Entrar</button></a>
+              <button type="submit" class="btn btn-success">Entrar</button>
+                
           </form>
         </div><!--/.navbar-collapse -->
       </div>

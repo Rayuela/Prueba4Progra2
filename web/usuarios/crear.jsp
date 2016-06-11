@@ -39,7 +39,7 @@
                 <td>Usuario</td><td><input type="text" name="usuario"></td>
             </tr>
              <tr>
-                <td>CLAVE</td><td><input type="text" name="clave"></td>
+                <td>CLAVE</td><td><input type="password" name="clave"></td>
             </tr>
              <tr>
                 <td>FECHA_NACIMIENTO</td><td><input type="date" name="fn"></td>
