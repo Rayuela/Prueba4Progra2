@@ -11,6 +11,9 @@ public class Estadio {
     private String nombre;
         Conexion con;
 
+        public Estadio(){
+            con=new Conexion();
+        }
     public int getEstadio_id() {
         return estadio_id;
     }
@@ -28,7 +31,7 @@ public class Estadio {
     }
     
     public void save(){
-        con.setInsertar("insert into Estadios(nombre) values('"+this.getNombre()+"'");
+        con.setInsertar("insert into Estadios(nombre) values('"+this.getNombre()+"')");
     }
     
     public void delete(){

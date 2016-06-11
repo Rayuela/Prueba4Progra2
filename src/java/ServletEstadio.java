@@ -20,7 +20,7 @@ public class ServletEstadio extends HttpServlet {
                Estadio stad=new Estadio();
                stad.setNombre(nombre);
                stad.save();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("estadios/index.jsp");
                
            }else if(request.getParameter("editar") != null){
                int estadio_id=Integer.parseInt(request.getParameter("estadio_id"));
@@ -29,14 +29,14 @@ public class ServletEstadio extends HttpServlet {
                stad.setEstadio_id(estadio_id);
                stad.setNombre(nombre);
                stad.update();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("estadios/index.jsp");
                
            }else if(request.getParameter("eliminar") !=null){
                int estadio_id=Integer.parseInt(request.getParameter("eliminar"));
                out.println("Eliminar ID"+estadio_id);
                Estadio stad=new Estadio();
                stad.delete();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("estadios/index.jsp");
            }
         }
     }

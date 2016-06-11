@@ -11,6 +11,10 @@ public class Equipo {
     private String nombre;
     private int estadio_id;
         Conexion con;
+        
+        public Equipo(){
+            con=new Conexion();
+        }
 
     public int getEquipo_id() {
         return equipo_id;
@@ -37,8 +41,8 @@ public class Equipo {
     }
     
     public void save(){
-        con.setInsertar("insert into Equipos(nombre,estadio_id) values('"+this.getNombre()+"','"
-                +this.getEstadio_id()+"'");
+        con.setInsertar("insert into Equipos(nombre,estadio_id,estado) values('"+this.getNombre()+"','"
+                +this.getEstadio_id()+"','activo)");
     }
     
     public void delete(){

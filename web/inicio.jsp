@@ -38,6 +38,10 @@
         <a href="usuarios/index.jsp">Usuarios</a>
         <br>
         <a href="jugadores/index.jsp">Jugadores</a>
+        <br>
+        <a href="estadios/index.jsp">Estadios</a>
+        <br>
+        <a href="equipos/index.jsp">Equipos</a>
     </center>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="template/js/bootstrap.min.js"></script>

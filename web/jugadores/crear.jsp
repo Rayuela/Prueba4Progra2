@@ -41,13 +41,13 @@
                 <td>APEPAT</td><td><input type="text" name="apepat"></td>
             </tr>
              <tr>
-                <td>APEMAT</td><td><input type="date" name="apemat"></td>
+                <td>APEMAT</td><td><input type="text" name="apemat"></td>
             </tr>
             <tr>
-                <td>EQUIPO_ID</td><td><input type="select" name="Equipo_id"></td>
+                <td>EQUIPO_ID</td><td><input type="text" name="equipo_id"></td>
             </tr>
             <tr>
-                <td>FECHA NACIMIENTO</td><td><input type="select" name="fecha_nacimiento"></td>
+                <td>FECHA NACIMIENTO</td><td><input type="date" name="fecha_nacimiento"></td>
             </tr>
             <tr>
                 <td>CREADO_POR</td><td><input type="text" name="creado_por"></td>

@@ -22,7 +22,7 @@ public class ServletEquipo extends HttpServlet {
                team.setNombre(nombre);
                team.setEstadio_id(estadio_id);
                team.save();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("equipos/index.jsp");
                
            }else if(request.getParameter("editar") != null){
                int equipo_id=Integer.parseInt(request.getParameter("equipo_id"));
@@ -33,14 +33,14 @@ public class ServletEquipo extends HttpServlet {
                team.setNombre(nombre);
                team.setEstadio_id(estadio_id);
                team.update();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("equipos/index.jsp");
                
            }else if(request.getParameter("eliminar") !=null){
                int equipo_id=Integer.parseInt(request.getParameter("eliminar"));
                out.println("Eliminar ID"+equipo_id);
                Equipo team=new Equipo();
                team.delete();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("equipos/index.jsp");
            }
         }
     }
