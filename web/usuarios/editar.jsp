@@ -36,7 +36,7 @@
                     <td>Fecha Nacimento</td><td><input type="text" name="fecha_nacimiento" value="<% out.println(""+con.getResultado().getString("fecha_nacimiento"));  %>"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" name="editar" value="actualizar"></td>
+                    <td><input type="submit" name="editar" value="Actualizar"></td>
                 </tr>
                 
                 <% } %>

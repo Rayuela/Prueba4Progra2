@@ -58,7 +58,7 @@ public class Usuario {
     }
     
     public void update(){
-        con.setInsertar("update Usuarios set='activo' where usuario_id='"+this.getUsuario_id()+'"'+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"'");
+        con.setInsertar("update Usuarios set='activo' where usuario_id='"+this.getUsuario_id()+"',usuario'"+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"'");
     }
     
 }

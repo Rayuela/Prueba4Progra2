@@ -30,7 +30,7 @@ public class ServletUsuario extends HttpServlet {
                int usuario_id=Integer.parseInt(request.getParameter("usuario_id"));
                String usuario=request.getParameter("usuario"); 
                String clave=request.getParameter("clave");
-               String fecha_nacimiento=request.getParameter("fn");
+               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
                Usuario user=new Usuario();
                user.setUsuario_id(usuario_id);
                user.setUsuario(usuario);

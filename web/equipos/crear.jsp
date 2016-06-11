@@ -33,7 +33,7 @@
         <br><br>
         <h1>CREAR NUEVO EQUIPO</h1>
         <br>
-        <form method="post" action="../ServletEstadio">
+        <form method="post" action="../ServletEquipo">
         <table class="table">
             <tr>
                 <td>NOMBRE</td><td><input type="text" name="nombre"></td>
