@@ -28,7 +28,7 @@
                     <td>NOMBRE</td><td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
                 </tr>
                 <tr>
-                    <td>ESTADIO_ID</td><td><input type="text" name="estadio_id" value="<% out.println("" + con.getResultado().getString("estadio_id"));  %>"></td>
+                    <td>ESTADIO_ID</td><td><input type="text" name="estadio_id" value="<% out.println("" + con.getResultado().getInt("estadio_id"));  %>"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="editar" value="Actualizar"></td>

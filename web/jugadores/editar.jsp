@@ -35,10 +35,7 @@
                             while (con.getResultado().next()) {
 
                         %>
-
-                <tr>
-                    <td>JUGADOR</td><td><input type="text" name="jugador" value="<% out.println("" + con.getResultado().getString("jugador"));  %>"></td>
-                </tr>
+                
                 <tr>
                     <td>NOMBRE</td><td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
                 </tr>
@@ -52,7 +49,7 @@
                     <td>FECHA NACIMIENTO</td><td><input type="text" name="fecha_nacimiento" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
                 </tr>
                 <tr>
-                    <td>EQUIPO ID</td><td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getString("equipo_id"));  %>"></td>
+                    <td>EQUIPO ID</td><td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
                 </tr>
                 <tr>
                     <td>CREADO POR</td><td><input type="text" name="creado_por" value="<% out.println("" + con.getResultado().getString("creado_por"));  %>"></td>
