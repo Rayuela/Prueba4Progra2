@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Crear Jugador</title>
+        
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/bootstrap.css" rel="stylesheet">
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -24,6 +27,7 @@
         </nav>
         <br><br>
         <h1>CREAR NUEVO JUGADOR</h1>
+        <hr>
         <br>
         <form method="post" action="../ServletJugador">
             <table class="table">

@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="author" content="Anibal">
         <link rel="icon" href="../../favicon.ico">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,12 +37,13 @@
         <a href="crear.jsp"><button type="button" class="btn btn-primary">Crear Estadio</button></a>
         <br>
         <form method="post" action="index.jsp">
-            <p ALIGN="right"><form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
+            <form class="navbar-form navbar-left" role="search">
+                <br>
+                <div class="form-group" style="width:20%" aling="right">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form></P>
+            </form>
     </form>
     <table class="table">
         <thread>

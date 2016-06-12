@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Crear Equipo</title>
+        
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/bootstrap.css" rel="stylesheet">
     </head>
@@ -25,6 +27,7 @@
         </nav>
         <br><br>
         <h1>CREAR NUEVO EQUIPO</h1>
+        <hr>
         <br>
         <form method="post" action="../ServletEquipo">
             <table class="table">

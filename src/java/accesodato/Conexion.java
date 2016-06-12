@@ -8,10 +8,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Anibal
- */
 public class Conexion {
     Connection con = null;
     Statement stmt = null;
@@ -31,7 +27,7 @@ public class Conexion {
             System.out.println("Error de conexion!!" + ex.getMessage());
         }
     }
-    //select * from ciudad
+    
     public void setConsulta(String sql) {
         try {
             stmt = con.createStatement();
@@ -41,7 +37,7 @@ public class Conexion {
      
         }
     }
-    //devolver el listado de ciudades
+    
     public ResultSet getResultado(){
         return rs;
     }

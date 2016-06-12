@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Crear Usuario</title>
+        
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/bootstrap.css" rel="stylesheet">
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -16,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.jsp">Prueba 3 Progra 2</a>
+          <a class="navbar-brand" href="#">Prueba 3 Progra 2</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           
@@ -25,6 +28,7 @@
     </nav>
         <br><br><br>
         <h1>CREAR NUEVO USUARIO</h1>
+        <hr>
         <br>
         <form method="post" action="../ServletUsuario">
         <table class="table">

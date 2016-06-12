@@ -2,10 +2,6 @@ package negocio;
 
 import accesodato.Conexion;
 
-/**
- *
- * @author Anibal
- */
 public class Equipo {
     private int equipo_id;
     private String nombre;

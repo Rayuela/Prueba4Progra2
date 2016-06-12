@@ -2,10 +2,6 @@ package negocio;
 
 import accesodato.Conexion;
 
-/**
- *
- * @author Anibal
- */
 public class Estadio {
     private int estadio_id;
     private String nombre;
@@ -39,7 +35,7 @@ public class Estadio {
     }
     
     public void update(){
-        con.setInsertar("update Estadios set usuario'"+this.getNombre()+"' where Estadio_id'"+this.getEstadio_id()+"'");
+        con.setInsertar("update Estadios where estadio_id='"+this.getEstadio_id()+"',nombre"+this.getNombre()+"'");
     }
     
 }

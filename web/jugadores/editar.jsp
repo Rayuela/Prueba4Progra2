@@ -6,12 +6,29 @@
         <title>Editar</title>
     </head>
     <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Prueba 3 Progra 2</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                </div>
+            </div>
+        </nav>
         <h1>Editar Jugador</h1>
+        <hr>
         <br>
         <% String jugador_id = request.getParameter("jugador_id"); %>
 
         <form method="post" action="../ServletJugador">
-            <table border="2">
+            <table class="table-striped">
                 <tr><td>JUGADOR_ID</td><td><input type="text" name="jugador_id" readonly value="<% out.println("" + jugador_id); %>"></td></tr>
                         <% Conexion con = new Conexion();
                             con.setConsulta("select * from Jugadores where jugador_id='" + jugador_id + "'");
@@ -48,5 +65,7 @@
             </table>
 
         </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../template/js/bootstrap.min.js"></script>
     </body>
 </html>
