@@ -48,7 +48,7 @@
                     <td>CLAVE</td><td><input type="text" name="clave" value="<% out.println("" + con.getResultado().getString("clave"));  %>"></td>
                 </tr>
                 <tr>
-                    <td>FECHA NACIMIENTO</td><td><input type="text" name="fecha_nacimiento" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                    <td>FECHA NACIMIENTO</td><td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="editar" value="Actualizar"></td>

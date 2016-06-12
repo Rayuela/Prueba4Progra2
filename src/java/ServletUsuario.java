@@ -6,10 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Usuario;
 
-/**
- *
- * @author Administrador
- */
 public class ServletUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,7 +26,7 @@ public class ServletUsuario extends HttpServlet {
                int usuario_id=Integer.parseInt(request.getParameter("usuario_id"));
                String usuario=request.getParameter("usuario"); 
                String clave=request.getParameter("clave");
-               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               String fecha_nacimiento=request.getParameter("fn");
                Usuario user=new Usuario();
                user.setUsuario_id(usuario_id);
                user.setUsuario(usuario);
@@ -41,8 +37,9 @@ public class ServletUsuario extends HttpServlet {
                
            }else if(request.getParameter("eliminar") !=null){
                int usuario_id=Integer.parseInt(request.getParameter("eliminar"));
-               out.println("Eliminar ID"+usuario_id);
+               out.println("Eliminar ID:"+usuario_id);
                Usuario user=new Usuario();
+               user.setUsuario_id(usuario_id);
                user.delete();
                response.sendRedirect("usuarios/index.jsp");
            }

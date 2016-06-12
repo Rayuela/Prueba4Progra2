@@ -42,7 +42,7 @@
                 <div class="form-group" style="width:20%" aling="right">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Buscar</button>
             </form>
     </form>
     <table class="table">

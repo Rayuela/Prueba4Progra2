@@ -43,7 +43,7 @@
                 <div class="form-group" style="width:20%" aling="right">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" name="buscador" class="btn btn-default">Submit</button>
+                <button type="submit" name="buscador" class="btn btn-default">Buscar</button>
             </form>
         </form>
         <table class="table">
@@ -63,7 +63,7 @@
                             con.setConsulta("select * from Usuarios where estado='activo'");
                         } else {
                             String usuario = request.getParameter("buscador");
-                            con.setConsulta("select * from Usuarios where nombre like '%" + usuario + "%' and estado='activo'");
+                            con.setConsulta("select * from Usuarios where nombre like '%"+usuario+"%' and estado='activo'");
                         }
 
                     } else {

@@ -6,10 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Equipo;
 
-/**
- *
- * @author Administrador
- */
 public class ServletEquipo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,8 +33,9 @@ public class ServletEquipo extends HttpServlet {
                
            }else if(request.getParameter("eliminar") !=null){
                int equipo_id=Integer.parseInt(request.getParameter("eliminar"));
-               out.println("Eliminar ID"+equipo_id);
+               out.println("Eliminar ID:"+equipo_id);
                Equipo team=new Equipo();
+               team.setEquipo_id(equipo_id);
                team.delete();
                response.sendRedirect("equipos/index.jsp");
            }

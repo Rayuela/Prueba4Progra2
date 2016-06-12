@@ -6,10 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Jugador;
 
-/**
- *
- * @author Administrador
- */
 public class ServletJugador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,7 +16,7 @@ public class ServletJugador extends HttpServlet {
                String apepat=request.getParameter("apepat");
                String apemat=request.getParameter("apemat");
                int equipo_id=Integer.parseInt("equipo_id");
-               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               String fecha_nacimiento=request.getParameter("fn");
                String creado_por=request.getParameter("creado_por");
                Jugador playd=new Jugador();
                playd.setNombre(nombre);
@@ -30,7 +26,7 @@ public class ServletJugador extends HttpServlet {
                playd.setFecha_nacimiento(fecha_nacimiento);
                playd.setCreado_por(creado_por);
                playd.save();
-               response.sendRedirect("jugadores/index.jsp");
+               response.sendRedirect("index.jsp");
                
            }else if(request.getParameter("editar") != null){
                int jugador_id=Integer.parseInt(request.getParameter("jugador_id"));
@@ -51,8 +47,9 @@ public class ServletJugador extends HttpServlet {
                
            }else if(request.getParameter("eliminar") !=null){
                int jugador_id=Integer.parseInt(request.getParameter("eliminar"));
-               out.println("Eliminar ID"+jugador_id);
+               out.println("Eliminar ID:"+jugador_id);
                Jugador playd=new Jugador();
+               playd.setJugador_id(jugador_id);
                playd.delete();
                response.sendRedirect("inicio.jsp");
            }

@@ -31,11 +31,11 @@ public class Estadio {
     }
     
     public void delete(){
-        con.setInsertar("delete from Estadios where estadio_id="+this.getEstadio_id()+"");
+        con.setInsertar("update Estadios set estado='pasivo' where estadio_id='"+this.getEstadio_id()+"'");
     }
     
     public void update(){
-        con.setInsertar("update Estadios where estadio_id='"+this.getEstadio_id()+"',nombre"+this.getNombre()+"'");
+        con.setInsertar("update Estadios set nombre='"+this.getNombre()+"', where estadio_id"+this.getEstadio_id()+"'");
     }
     
 }
