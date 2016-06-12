@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Prueba 3 Progra 2</a>
+                    <a class="navbar-brand" href="">Prueba 3 Progra 2</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                 </div>
@@ -81,6 +81,7 @@
                 <% }%>
             </tbody>
         </table>
+            <a href="../inicio.jsp"<button type="button" class="btn btn-success">Regresar</button></a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="../template/js/bootstrap.min.js"></script>
     </body>
