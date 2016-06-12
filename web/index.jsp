@@ -38,7 +38,7 @@
                 <a href="inicio.jsp"<button type="submit" class="btn btn-success">Entrar</button></a>
                 
           </form>
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
     </nav>
 
