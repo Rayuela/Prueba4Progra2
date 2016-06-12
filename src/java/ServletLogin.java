@@ -14,11 +14,7 @@ public class ServletLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            if(request.getParameter("entrar") !=null){
-            
-        }
-        }
+        response.sendRedirect("inicio.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -33,13 +29,7 @@ public class ServletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        String action=(request.getPathInfo()!=null?request.getPathInfo():"");
-        HttpSession sesion = request.getSession();
-        if(action.equals("/out")){
-            sesion.invalidate();
-            response.sendRedirect("/home.jsp");
-        }
+            response.sendRedirect("inicio.jsp");
     }
 
     /**
@@ -60,6 +50,8 @@ public class ServletLogin extends HttpServlet {
             if(usuario.equals("usuario") && clave.equals("contraseña") && sesion.getAttribute("user") !=null){
                 sesion.setAttribute("user", usuario);
             response.sendRedirect("inicio.jsp");
+        }else{
+                response.sendRedirect("index.jsp");
         }
     }
 

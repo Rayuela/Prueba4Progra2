@@ -1,12 +1,5 @@
-<%-- 
-    Document   : index
-    Created on : 07-06-2016, 16:29:22
-    Author     : Anibal
---%>
-
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">

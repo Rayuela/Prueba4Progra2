@@ -1,11 +1,4 @@
-<%-- 
-    Document   : crear
-    Created on : 07-06-2016, 4:23:23
-    Author     : Anibal
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
