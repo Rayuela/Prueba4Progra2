@@ -7,7 +7,7 @@
         <meta name="author" content="Anibal">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>Prueba 3 Progra 2</title>
+        <title>Prueba 4 Progra 2</title>
 
         <link href="template/css/bootstrap.min.css" rel="stylesheet">
         <link href="template/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">Prueba 3 Progra 2</a>
+                    <a class="navbar-brand" href="">Prueba 4 Progra 2</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="pos" action="ServletLogin">
@@ -44,7 +44,7 @@
         <div class="jumbotron">
             <div class="container">
                 <h1>Bienvenido</h1>
-                <p>Pagina creada por Aníbal Barría para prueba 3 de Programación 2 Java Web Instituto INACAP año 2016.</p>
+                <p>Pagina creada por Aníbal Barría para prueba 4 de Programación 2 Java Web Instituto INACAP año 2016.</p>
                 <br>
             </div>
         </div>
