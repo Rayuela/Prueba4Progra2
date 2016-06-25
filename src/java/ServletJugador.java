@@ -43,7 +43,7 @@ public class ServletJugador extends HttpServlet {
                playd.setFecha_nacimiento(fecha_nacimiento);
                playd.setEquipo_id(equipo_id);
                playd.update();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("jugadores/index.jsp");
                
            }else if(request.getParameter("eliminar") !=null){
                int jugador_id=Integer.parseInt(request.getParameter("eliminar"));
@@ -51,7 +51,7 @@ public class ServletJugador extends HttpServlet {
                Jugador playd=new Jugador();
                playd.setJugador_id(jugador_id);
                playd.delete();
-               response.sendRedirect("inicio.jsp");
+               response.sendRedirect("jugadores/index.jsp");
            }
         }
     }

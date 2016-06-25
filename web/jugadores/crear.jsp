@@ -44,7 +44,7 @@
                     <td>EQUIPO_ID</td><td><input type="text" name="equipo_id"></td>
                 </tr>
                 <tr>
-                    <td>FECHA NACIMIENTO</td><td><input type="date" name="fecha_nacimiento"></td>
+                    <td>FECHA NACIMIENTO</td><td><input type="date" name="fn"></td>
                 </tr>
                 <tr>
                     <td>CREADO_POR</td><td><input type="text" name="creado_por"></td>

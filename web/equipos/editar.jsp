@@ -33,7 +33,7 @@
 
         <form method="post" action="../ServletEquipo">
             <table class="table-striped">
-                <tr><td>USUARIO_ID</td><td><input type="text" name="estadio_id" readonly value="<% out.println("" + equipo_id); %>"></td></tr>
+                <tr><td>EQUIPO_ID</td><td><input type="text" name="estadio_id" readonly value="<% out.println("" + equipo_id); %>"></td></tr>
                         <% Conexion con = new Conexion();
                             con.setConsulta("select * from Equipos where equipo_id='" + equipo_id + "'");
                             while (con.getResultado().next()) {

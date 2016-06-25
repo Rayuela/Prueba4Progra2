@@ -53,6 +53,7 @@
             <th>APEMAT</th>
             <th>FECHA_NACIMIENTO</th>
             <th>EQUIPO_ID</th>
+            <th>CREDO POR</th>
             <th>ACCIONES</th>
         </thread>
         <tbody>
@@ -80,6 +81,7 @@
                     out.println("<td>" + con.getResultado().getString("apemat") + "</td>");
                     out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
                     out.println("<td>" + con.getResultado().getString("equipo_id") + "</td>");
+                    out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
                     out.println("<td>" + "<a href='../ServletJugador?eliminar=" + con.getResultado().getString("jugador_id") + "'>Eliminar</a>" + "</td>");
                     out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("jugador_id") + "'>Editar</a>" + "</td>");
                 %>

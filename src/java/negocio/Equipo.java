@@ -47,7 +47,7 @@ public class Equipo {
     
     public void save(){
         con.setInsertar("insert into Equipos(nombre,estadio_id,estado) values('"+this.getNombre()+"','"
-                +this.getEstadio_id()+"','activo)");
+                +this.getEstadio_id()+"','activo')");
     }
     
     public void delete(){
@@ -55,7 +55,7 @@ public class Equipo {
     }
     
     public void update(){
-        con.setInsertar("update Equipos set nombre='"+this.getNombre()+"',estadio_id'"+this.getEstadio_id()+"' where equipo_id'"+this.getEquipo_id()+"'");
+        con.setInsertar("update Equipos set nombre='"+this.getNombre()+"',estadio_id='"+this.getEstadio_id()+"' where equipo_id='"+this.getEquipo_id()+"'");
     }
     
 }

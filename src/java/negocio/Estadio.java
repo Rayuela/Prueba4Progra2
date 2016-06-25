@@ -35,7 +35,7 @@ public class Estadio {
     }
     
     public void update(){
-        con.setInsertar("update Estadios set nombre='"+this.getNombre()+"', where estadio_id"+this.getEstadio_id()+"'");
+        con.setInsertar("update Estadios set nombre='"+this.getNombre()+"', where estadio_id="+this.getEstadio_id()+"'");
     }
     
 }

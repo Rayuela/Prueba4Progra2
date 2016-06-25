@@ -82,7 +82,7 @@ public class Jugador {
     }
     
     public void save(){
-        con.setInsertar("insert into Jugadores(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por,estado,estado) values('"+this.getNombre()+"','"
+        con.setInsertar("insert into Jugadores(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por,estado,) values('"+this.getNombre()+"','"
                 +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"','activo')");
     }
     
@@ -91,8 +91,8 @@ public class Jugador {
     }
     
     public void update(){
-        con.setInsertar("update Jugadores set nombre='"+this.getNombre()+"',clave'"+this.getApepat()+"',apemat'"+this.getApemat()+"',fecha_nacimiento'"
-                +this.getFecha_nacimiento()+"',creado_por'"+this.getCreado_por()+"' where jugador_id'"+this.getJugador_id()+"'");
+        con.setInsertar("update Jugadores set nombre='"+this.getNombre()+"',apepat='"+this.getApepat()+"',apemat='"+this.getApemat()+"',fecha_nacimiento='"
+                +this.getFecha_nacimiento()+"',equipo_id='"+this.getEquipo_id()+"',creado_por='"+this.getCreado_por()+"' where jugador_id='"+this.getJugador_id()+"'");
     }
     
 }

@@ -26,7 +26,7 @@
             </div>
         </nav>
         <br><br>
-        <h1>Editar Usuario</h1>
+        <h1>Editar Estadio</h1>
         <hr>
         <br>
         <% String estadio_id = request.getParameter("estadio_id"); %>

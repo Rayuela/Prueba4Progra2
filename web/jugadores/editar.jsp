@@ -4,6 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar</title>
+        <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../template/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -22,6 +24,7 @@
                 </div>
             </div>
         </nav>
+        <br><br>
         <h1>Editar Jugador</h1>
         <hr>
         <br>
@@ -35,7 +38,7 @@
                             while (con.getResultado().next()) {
 
                         %>
-                
+
                 <tr>
                     <td>NOMBRE</td><td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
                 </tr>

@@ -63,7 +63,7 @@ public class Usuario {
     }
     
     public void update(){
-        con.setInsertar("update Usuarios set usuario='"+this.getUsuario()+"',clave'"+this.getClave()+"',fecha_nacimiento'"+this.getFecha_nacimiento()+"' where usuario_id='"+this.getUsuario_id()+"'");
+        con.setInsertar("update Usuarios set usuario='"+this.getUsuario()+"',clave='"+this.getClave()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"' where usuario_id='"+this.getUsuario_id()+"'");
     }
     
 }
