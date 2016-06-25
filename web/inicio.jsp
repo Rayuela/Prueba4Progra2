@@ -12,7 +12,6 @@
         <title>Inicio</title>
 
         <link href="template/css/bootstrap.min.css" rel="stylesheet">
-        <link href="template/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
 

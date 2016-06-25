@@ -1,22 +1,23 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="Anibal">
+        <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
+        <title>Jugadores</title>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio Jugador</title>
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../template/css/bootstrap.css" rel="stylesheet">
+        <link href="../template/css/dashboard.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -24,73 +25,90 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">Prueba 4 Progra 2</a>
+                    <a class="navbar-brand" href="#">Prueba 4 Progra 2</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </form>
                 </div>
             </div>
         </nav>
-        <br><br>
-        <h1>Lista Jugadores</h1>
-        <hr>
-        <br>
-        <a href="crear.jsp"><button type="button" class="btn btn-primary">Crear Jugador</button></a>
-        <br>
-        <form method="post" action="index.jsp">
-            <form class="navbar-form navbar-left" role="search">
-                <br>
-                <div class="form-group" style="width:20%" aling="right">
-                    <input type="text" class="form-control" placeholder="Search">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                        <li><a href="crear.jsp">Crear Jugador</a></li>
+                        <li><a href="#">Reportes</a></li>
+                        <br>
+                        <li><a href="../inicio.jsp">Regresar</a></li>
+                    </ul>
+
                 </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
-    </form>
-    <table class="table">
-        <thread>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APEPAT</th>
-            <th>APEMAT</th>
-            <th>FECHA_NACIMIENTO</th>
-            <th>EQUIPO_ID</th>
-            <th>CREDO POR</th>
-            <th>ACCIONES</th>
-        </thread>
-        <tbody>
-            <%
-                Conexion con = new Conexion();
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                if (request.getParameter("buscador") != null) {
-                    if (request.getParameter("buscador").isEmpty()) {
-                        con.setConsulta("select * from Jugadores where estado='activo'");
-                    } else {
-                        String nombre = request.getParameter("buscador");
-                        con.setConsulta("select * from JUgadores where nombre like '%" + nombre + "%' and estado='activo'");
-                    }
+                    <h2 class="sub-header">Lista Jugadores</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NOMBRE</th>
+                                    <th>APEPAT</th>
+                                    <th>APEMAT</th>
+                                    <th>FECHA NACIMIENTO</th>
+                                    <th>EQUIPO ID</th>
+                                    <th>CREADO POR</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                                    Conexion con = new Conexion();
 
-                } else {
-                    con.setConsulta("select * from Jugadores where estado='activo'");
-                }
-            %>
-            <% while (con.getResultado().next()) { %>
-            <tr>
-                <%
-                    out.println("<td>" + con.getResultado().getString("jugador_id") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("apepat") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("apemat") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("equipo_id") + "</td>");
-                    out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
-                    out.println("<td>" + "<a href='../ServletJugador?eliminar=" + con.getResultado().getString("jugador_id") + "'>Eliminar</a>" + "</td>");
-                    out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("jugador_id") + "'>Editar</a>" + "</td>");
-                %>
-            </tr>
-            <% }%>
-        </tbody>
-    </table>
-    <a href="../inicio.jsp"<button type="button" class="btn btn-success">Regresar</button></a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../template/js/bootstrap.min.js"></script>
-</body>
+                                    if (request.getParameter("buscador") != null) {
+                                        if (request.getParameter("buscador").isEmpty()) {
+                                            con.setConsulta("select * from Jugadores where estado='activo'");
+                                        } else {
+                                            String nombre = request.getParameter("buscador");
+                                            con.setConsulta("select * from Jugadores where nombre like '%" + nombre + "%' and estado='activo'");
+                                        }
+
+                                    } else {
+                                        con.setConsulta("select * from Jugadores where estado='activo'");
+                                    }
+                                %>
+                                <% while (con.getResultado().next()) {%>
+                                <tr>
+                                    <%
+                                        out.println("<td>" + con.getResultado().getString("jugador_id") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("apepat") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("apemat") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("equipo_id") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
+                                        out.println("<td>" + "<a href='../ServletJugador?eliminar=" + con.getResultado().getString("jugador_id") + "'>Eliminar</a>" + "</td>");
+                                        out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("jugador_id") + "'>Editar</a>" + "</td>");
+                                    %>
+                                </tr>
+                                <% }%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../template/js/bootstrap.min.js"></script>
+
+    </body>
 </html>
