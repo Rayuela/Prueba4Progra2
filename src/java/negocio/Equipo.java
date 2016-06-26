@@ -51,7 +51,7 @@ public class Equipo {
     }
     
     public void delete(){
-        con.setInsertar("update Equipos set estado='pasivo' where Equipos_id='"+this.getEquipo_id()+"'");
+        con.setInsertar("update Equipos set estado='pasivo' where equipo_id='"+this.getEquipo_id()+"'");
     }
     
     public void update(){

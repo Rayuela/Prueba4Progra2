@@ -8,8 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <meta name="Anibal" content="">
+
         <title>Usuarios</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
@@ -29,14 +29,9 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Help</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
                 </div>
             </div>
         </nav>
@@ -56,6 +51,21 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                     <h2 class="sub-header">Lista Usuarios</h2>
+
+                    <form method="post" action="index.jsp">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="buscador"placeholder="Buscar...">
+                                    <span class="input-group-btn">
+                                        <button type="sumbit" class="btn btn-default" type="button">Buscar</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <br>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -76,7 +86,7 @@
                                             con.setConsulta("select * from Usuarios where estado='activo'");
                                         } else {
                                             String usuario = request.getParameter("buscador");
-                                            con.setConsulta("select * from Usuarios where nombre like '%" + usuario + "%' and estado='activo'");
+                                            con.setConsulta("select * from Usuarios where usuario like '%" + usuario + "%' and estado='activo'");
                                         }
 
                                     } else {

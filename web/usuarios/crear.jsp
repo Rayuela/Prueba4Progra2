@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <meta name="Anibal" content="">
+        
         <title>Crear Usuario</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
@@ -53,10 +53,12 @@
                                         <th>FECHA NACIMIENTO</th>
                                     </tr>
                                 </thead>
-
+                                
                                 <td><input type="text" name="usuario"></td>
                                 <td><input type="password" name="clave"></td>
-                                <td><input type="date" name="fn"></td>
+                                
+                                    <td><input type="date" name="fn"></td>
+                                
 
                                 <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>
 

@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <meta name="Anibal" content="">
+
         <title>Crear Estadio</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
@@ -49,10 +49,12 @@
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
+                                        <th>CIUDAD ID</th>
                                     </tr>
                                 </thead>
 
                                 <td><input type="text" name="nombre"></td>
+                                <td><select>Ciudad_id</select></td>
 
                                 <td><Button type="sumbit" class="btn btn-success" name="guardar">Guardar</button></td>
                                 

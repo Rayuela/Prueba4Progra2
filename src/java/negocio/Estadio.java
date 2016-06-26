@@ -5,6 +5,7 @@ import accesodato.Conexion;
 public class Estadio {
     private int estadio_id;
     private String nombre;
+    private int ciudad_id;
         Conexion con;
 
         public Estadio(){
@@ -26,6 +27,14 @@ public class Estadio {
         this.nombre = nombre;
     }
     
+     public int getCiudad_id() {
+        return ciudad_id;
+    }
+
+    public void setCiudad_id(int ciudad_id) {
+        this.ciudad_id = ciudad_id;
+    }
+    
     public void save(){
         con.setInsertar("insert into Estadios(nombre) values('"+this.getNombre()+"')");
     }
@@ -35,7 +44,7 @@ public class Estadio {
     }
     
     public void update(){
-        con.setInsertar("update Estadios set nombre='"+this.getNombre()+"', where estadio_id="+this.getEstadio_id()+"'");
+        con.setInsertar("update Estadios set nombre='"+this.getNombre()+",ciudad_id'"+this.getCiudad_id()+"' where estadio_id="+this.getEstadio_id()+"'");
     }
     
 }
