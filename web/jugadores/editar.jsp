@@ -1,15 +1,23 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+        <title>Editar Usuario</title>
+
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../template/css/bootstrap.css" rel="stylesheet">
+        <link href="../template/css/dashboard.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -19,52 +27,61 @@
                     </button>
                     <a class="navbar-brand" href="">Prueba 4 Progra 2</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-
-                </div>
             </div>
         </nav>
-        <br><br>
-        <h1>Editar Jugador</h1>
-        <hr>
-        <br>
-        <% String jugador_id = request.getParameter("jugador_id"); %>
 
-        <form method="post" action="../ServletJugador">
-            <table class="table-striped">
-                <tr><td>JUGADOR_ID</td><td><input type="text" name="jugador_id" readonly value="<% out.println("" + jugador_id); %>"></td></tr>
-                        <% Conexion con = new Conexion();
-                            con.setConsulta("select * from Jugadores where jugador_id='" + jugador_id + "'");
-                            while (con.getResultado().next()) {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="">Editar Jugador <span class="sr-only">(current)</span></a></li>
+                        <br>
+                        <br>
+                        <li><a href="index.jsp">Regresar</a></li>
+                    </ul>
 
-                        %>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                <tr>
-                    <td>NOMBRE</td><td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
-                </tr>
-                <tr>
-                    <td>APELLIDO PATERNO</td><td><input type="text" name="apepat" value="<% out.println("" + con.getResultado().getString("apepat"));  %>"></td>
-                </tr>
-                <tr>
-                    <td>APELLIDO MATERNO</td><td><input type="text" name="apemat" value="<% out.println("" + con.getResultado().getString("apemat"));  %>"></td>
-                </tr>
-                <tr>
-                    <td>FECHA NACIMIENTO</td><td><input type="text" name="fecha_nacimiento" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
-                </tr>
-                <tr>
-                    <td>EQUIPO ID</td><td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
-                </tr>
-                <tr>
-                    <td>CREADO POR</td><td><input type="text" name="creado_por" value="<% out.println("" + con.getResultado().getString("creado_por"));  %>"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="editar" value="Actualizar"></td>
-                </tr>
+                    <h2 class="sub-header">Editar Jugador</h2>
+                    <div class="table-responsive">
+                        <% String jugador_id = request.getParameter("jugador_id"); %>
 
-                <% }%>
-            </table>
+                        <form method="post" action="../ServletJugador">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>JUGADOR_ID</th>
+                                        <th>NOMBBRE</th>
+                                        <th>APEPAT</th>
+                                        <th>APEMAT</th>
+                                        <th>FECHA NACIMIENTO</th>
+                                        <th>EQUIPO ID</th>
+                                    </tr>
+                                </thead>
+                                <td><input type="text" name="jugador_id" readonly value="<% out.println("" + jugador_id); %>"></td>
+                                    <% Conexion con = new Conexion();
+                                        con.setConsulta("select * from Jugadores where jugador_id='" + jugador_id + "'");
+                                        while (con.getResultado().next()) {
 
-        </form>
+                                    %>
+                                <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
+                                <td><input type="text" name="apepat" value="<% out.println("" + con.getResultado().getString("apepat"));  %>"></td>
+                                <td><input type="text" name="apemat" value="<% out.println("" + con.getResultado().getString("apemat"));  %>"></td>
+                                <td><input type="text" name="fecha_nacimiento" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                                <td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
+
+                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
+
+
+                                <% }%>
+                            </table>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="../template/js/bootstrap.min.js"></script>
     </body>

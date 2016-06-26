@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="Anibal">
+        <meta name="Anibal" content="">
         <link rel="icon" href="../../favicon.ico">
 
         <title>Inicio</title>
@@ -31,19 +31,18 @@
             </div>
         </nav>
         <br><br><br><br><br>
-        <div class="panel panel-primary">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title"><center>Listas</center></h3>
             </div>
             <div class="panel-body">
                 <center>
-                    <a href="usuarios/index.jsp"><button type="button" class="btn btn-primary">Usuarios</button></a>
-                    <br>
-                    <a href="jugadores/index.jsp"><button type="button" class="btn btn-primary">Jugadores</button></a>
-                    <br>
-                    <a href="estadios/index.jsp"><button type="button" class="btn btn-primary">Estadios</button></a>
-                    <br>
-                    <a href="equipos/index.jsp"><button type="button" class="btn btn-primary">Equipos</button></a>
+                    <a href="usuarios/index.jsp"><button type="button" class="btn btn-default">Usuarios</button></a>
+                    <a href="jugadores/index.jsp"><button type="button" class="btn btn-default">Jugadores</button></a>
+                    <a href="estadios/index.jsp"><button type="button" class="btn btn-default">Estadios</button></a>
+                    <a href="equipos/index.jsp"><button type="button" class="btn btn-default">Equipos</button></a>
+                <button type="button" class="btn btn-default">Paises</button>
+                <button type="button" class="btn btn-default">Ciudades</button>
                 </center>
             </div>
         </div>

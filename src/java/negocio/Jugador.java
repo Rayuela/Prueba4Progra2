@@ -92,7 +92,7 @@ public class Jugador {
     
     public void update(){
         con.setInsertar("update Jugadores set nombre='"+this.getNombre()+"',apepat='"+this.getApepat()+"',apemat='"+this.getApemat()+"',fecha_nacimiento='"
-                +this.getFecha_nacimiento()+"',equipo_id='"+this.getEquipo_id()+"',creado_por='"+this.getCreado_por()+"' where jugador_id='"+this.getJugador_id()+"'");
+                +this.getFecha_nacimiento()+"',equipo_id='"+this.getEquipo_id()+"' where jugador_id='"+this.getJugador_id()+"'");
     }
     
 }

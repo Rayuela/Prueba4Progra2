@@ -4,7 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="Anibal">
+        <meta name="Anibal" content="">
         <link rel="icon" href="../../favicon.ico">
 
         <title>Prueba 4 Progra 2</title>
@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <input type="password" placeholder="Contraseña" name="contraseña" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-success">Entrar</button>
+                        <a href="inicio.jsp"><button type="submit" class="btn btn-success">Entrar</button></a>
 
                     </form>
                 </div>
