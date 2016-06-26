@@ -98,8 +98,8 @@
                                         out.println("<td>" + con.getResultado().getString("equipo_id") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("estadio_id") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletEquipo?eliminar=" + con.getResultado().getString("equipo_id") + "'>Eliminar</a>" + "</td>");
-                                        out.println("<td>" + "<a href='editar.jsp?equipo_id=" + con.getResultado().getString("equipo_id") + "'>Editar</a>" + "</td>");
+                                        out.println("<td>" + "<a href='../ServletEquipo?eliminar=" + con.getResultado().getString("equipo_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
+                                        out.println("<td>" + "<a href='editar.jsp?equipo_id=" + con.getResultado().getString("equipo_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>");
                                     %>
                                 </tr>
                                 <% }%>

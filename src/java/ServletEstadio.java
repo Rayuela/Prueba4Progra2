@@ -21,9 +21,11 @@ public class ServletEstadio extends HttpServlet {
            }else if(request.getParameter("editar") != null){
                int estadio_id=Integer.parseInt(request.getParameter("estadio_id"));
                String nombre=request.getParameter("nombre"); 
+               int ciudad_id=Integer.parseInt(request.getParameter("ciudad_id"));
                Estadio stad=new Estadio();
                stad.setEstadio_id(estadio_id);
                stad.setNombre(nombre);
+               stad.setCiudad_id(ciudad_id);
                stad.update();
                response.sendRedirect("estadios/index.jsp");
                

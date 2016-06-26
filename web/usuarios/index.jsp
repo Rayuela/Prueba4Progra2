@@ -100,8 +100,8 @@
                                         out.println("<td>" + con.getResultado().getString("usuario") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("clave") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletUsuario?eliminar=" + con.getResultado().getString("usuario_id") + "'>Eliminar</a>" + "</td>");
-                                        out.println("<td>" + "<a href='editar.jsp?usuario_id=" + con.getResultado().getString("usuario_id") + "'>Editar</a>" + "</td>");
+                                        out.println("<td>" + "<a href='../ServletUsuario?eliminar=" + con.getResultado().getString("usuario_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
+                                        out.println("<td>" + "<a href='editar.jsp?usuario_id=" + con.getResultado().getString("usuario_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>"); 
                                     %>
                                 </tr>
                                 <% }%>

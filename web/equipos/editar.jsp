@@ -59,6 +59,7 @@
                                 <td><input type="text" name="estadio_id" readonly value="<% out.println("" + equipo_id); %>"></td>
                                     <% Conexion con = new Conexion();
                                         con.setConsulta("select * from Equipos where equipo_id='" + equipo_id + "'");
+                                        
                                         while (con.getResultado().next()) {
 
                                     %>

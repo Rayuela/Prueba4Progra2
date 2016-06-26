@@ -53,16 +53,18 @@
                                     <tr>
                                         <th>ESTADIO ID</th>
                                         <th>NOMBRE</th>
+                                        <th>CIUDAD ID</th>
                                     </tr>                    
                                 </thead>
                                 <td><input type="text" name="estadio_id" readonly value="<% out.println("" + estadio_id); %>"></td>
                                     <% Conexion con = new Conexion();
-                                        con.setConsulta("select * from Estadios where estadio_id='" + estadio_id + "'");
+                                        con.setConsulta("select * from Estadios where estadio_id='"+estadio_id+"'");
                                         while (con.getResultado().next()) {
 
                                     %>
 
                                 <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
+                                <td><input type="text" name="ciudad_id" value="<% out.println("" + con.getResultado().getInt("ciudad_id")); %>"></td>
 
                                 <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
 

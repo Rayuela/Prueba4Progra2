@@ -51,7 +51,7 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                     <h2 class="sub-header">Lista Jugadores</h2>
-
+                    
                     <form method="post" action="index.jsp">
                         <div class="row">
                             <div class="col-lg-6">
@@ -64,6 +64,7 @@
                             </div>
                         </div>
                     </form>
+                    
                     <br>
 
                     <div class="table-responsive">
@@ -106,8 +107,8 @@
                                         out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("equipo_id") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletJugador?eliminar=" + con.getResultado().getString("jugador_id") + "'>Eliminar</a>" + "</td>");
-                                        out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("jugador_id") + "'>Editar</a>" + "</td>");
+                                        out.println("<td>" + "<a href='../ServletJugador?eliminar=" + con.getResultado().getString("jugador_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
+                                        out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("jugador_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>");
                                     %>
                                 </tr>
                                 <% }%>

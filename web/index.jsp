@@ -15,7 +15,7 @@
     <body>
 
         <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2>La U tiene estadio</h2>
-                    <p>Si el Usuario lo desea el Equipo de Futbol Universidad de Chile tendra su primer estadio, o segundo si contamos con el estadio del juego Minecraft. </p>
+                    <p>La Universidad de Chile se complace anunciar su primer estadio en el conocido juego Minecraft.<br> <b>Ponto dirección IP.</b></p>
                     <p><a class="btn btn-default" href="http://lalegal.cl/noticia/1345" role="button">View details &raquo;</a></p>
                 </div>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br>
