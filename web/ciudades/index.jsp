@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="Anibal" content="">
 
-        <title>Estadio</title>
+        <title>Ciudades</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
-                        <li><a href="crear.jsp">Nuevo Estadio</a></li>
+                        <li><a href="crear.jsp">Nueva Ciudad</a></li>
                         <li><a href="#">Reportes</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>
@@ -50,8 +50,7 @@
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                    <h2 class="sub-header">Lista Estadios</h2>
-
+                    <h2 class="sub-header">Lista Ciudades</h2>
                     <form method="post" action="index.jsp">
                         <div class="row">
                             <div class="col-lg-6">
@@ -64,15 +63,16 @@
                             </div>
                         </div>
                     </form>
-                    <br>
 
+                    <br>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>NOMBRE</th>
-                                    <th>CIUDAD ID</th>
+                                    <th>PAIS ID</th>
+                                    <th>CREADO POR</th>
                                     <th>ACCIONES</th>
                                 </tr>
                             </thead>
@@ -82,24 +82,25 @@
 
                                     if (request.getParameter("buscador") != null) {
                                         if (request.getParameter("buscador").isEmpty()) {
-                                            con.setConsulta("select * from Estadios");
+                                            con.setConsulta("select * from Ciudades where estado='activo'");
                                         } else {
                                             String nombre = request.getParameter("buscador");
-                                            con.setConsulta("select * from Estadios where nombre like '%" + nombre + "%'");
+                                            con.setConsulta("select * from Ciudades where nombre like '%" + nombre + "%' and estado='activo'");
                                         }
 
                                     } else {
-                                        con.setConsulta("select * from Estadios");
+                                        con.setConsulta("select * from Ciudades where estado='activo'");
                                     }
                                 %>
                                 <% while (con.getResultado().next()) { %>
                                 <tr>
                                     <%
-                                        out.println("<td>" + con.getResultado().getString("estadio_id") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("Ciudad_id") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
-                                        out.println("<td>" + con.getResultado().getString("ciudad_id") + "</td>");
-                                        out.println("<td>" + "<a href='../ServletEstadio?eliminar=" + con.getResultado().getString("estadio_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
-                                        out.println("<td>" + "<a href='editar.jsp?jugador_id=" + con.getResultado().getString("estadio_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("pais_id") + "</td>");
+                                        out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
+                                        out.println("<td>" + "<a href='../ServletCiudad?eliminar=" + con.getResultado().getString("ciudad_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
+                                        out.println("<td>" + "<a href='editar.jsp?ciudad_id=" + con.getResultado().getString("ciudad_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>");
                                     %>
                                 </tr>
                                 <% }%>
@@ -111,6 +112,5 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="../template/js/bootstrap.min.js"></script>
-
     </body>
 </html>

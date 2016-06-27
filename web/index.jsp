@@ -55,6 +55,14 @@
                     <p>La Universidad de Chile se complace anunciar su primer estadio en el conocido juego Minecraft.<br> <b>Ponto dirección IP.</b></p>
                     <p><a class="btn btn-default" href="http://lalegal.cl/noticia/1345" role="button">View details &raquo;</a></p>
                 </div>
+                
+                 <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Chile Campeon de Copa America Centenario</h2>
+                    <p></p>
+                    <p><a class="btn btn-default" href="" role="button">View details &raquo;</a></p>
+                </div>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                 <hr>
@@ -63,7 +71,8 @@
                     <p>&copy; Aníbal Barría.</p>
                 </footer>
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="template/js/bootstrap.min.js"></script>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="template/js/bootstrap.min.js"></script>
     </body>
 </html>

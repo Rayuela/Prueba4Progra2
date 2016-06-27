@@ -68,7 +68,7 @@
 
                                 <td><input type="text" name="estadio_id" value="<% out.println("" + con.getResultado().getInt("estadio_id"));  %>"></td>
 
-                                <td><Button type="submit" class="btn btn-success" name="editar">Editar</button></td>
+                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
 
 
                                 <% }%>

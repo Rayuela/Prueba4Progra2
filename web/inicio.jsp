@@ -41,8 +41,8 @@
                     <a href="jugadores/index.jsp"><button type="button" class="btn btn-default">Jugadores</button></a>
                     <a href="estadios/index.jsp"><button type="button" class="btn btn-default">Estadios</button></a>
                     <a href="equipos/index.jsp"><button type="button" class="btn btn-default">Equipos</button></a>
-                <button type="button" class="btn btn-default">Paises</button>
-                <button type="button" class="btn btn-default">Ciudades</button>
+                    <a href="ciudades/index.jsp"<button type="button" class="btn btn-default">Ciudades</button></a>
+                    <a href="paises/index.jsp"<button type="button" class="btn btn-default">Paises</button></a>
                 </center>
             </div>
         </div>

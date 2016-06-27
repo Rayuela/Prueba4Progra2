@@ -41,7 +41,7 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
-                        <li><a href="crear.jsp">Crear Usuario</a></li>
+                        <li><a href="crear.jsp">Nuevo Usuario</a></li>
                         <li><a href="#">Reportes</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>

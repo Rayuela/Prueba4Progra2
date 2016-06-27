@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="">Crear Jugador <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="">Nuevo Jugador <span class="sr-only">(current)</span></a></li>
                     <br>
                     <br>
                     <li><a href="index.jsp">Regresar</a></li>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                <h2 class="sub-header">Crear Jugador</h2>
+                <h2 class="sub-header">Nuevo Jugador</h2>
                 <div class="table-responsive">
                     <form method="post" action="../ServletJugador">
                         <table class="table table-striped">

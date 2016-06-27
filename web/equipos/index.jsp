@@ -41,7 +41,7 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
-                        <li><a href="crear.jsp">Crear Equipo</a></li>
+                        <li><a href="crear.jsp">Nuevo Equipo</a></li>
                         <li><a href="#">Reportes</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>
@@ -82,14 +82,14 @@
 
                                     if (request.getParameter("buscador") != null) {
                                         if (request.getParameter("buscador").isEmpty()) {
-                                            con.setConsulta("select * from Equipos");
+                                            con.setConsulta("select * from Equipos where estado='activo'");
                                         } else {
                                             String nombre = request.getParameter("buscador");
                                             con.setConsulta("select * from Equipos where nombre like '%" + nombre + "%'");
                                         }
 
                                     } else {
-                                        con.setConsulta("select * from Equipos");
+                                        con.setConsulta("select * from Equipos where estado='activo'");
                                     }
                                 %>
                                 <% while (con.getResultado().next()) { %>

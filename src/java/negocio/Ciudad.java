@@ -1,11 +1,18 @@
 package negocio;
 
+import accesodato.Conexion;
+
 public class Ciudad {
     private int ciudad_id;
     private String nombre;
     private String creado_por;
     private String estado;
     private int pais_id;
+        Conexion con;
+        
+        public Ciudad(){
+            con = new Conexion();
+        }
 
     public int getCiudad_id() {
         return ciudad_id;
@@ -45,6 +52,19 @@ public class Ciudad {
 
     public void setPais_id(int pais_id) {
         this.pais_id = pais_id;
+        
+    }
+        public void save(){
+        con.setInsertar("insert into Ciudades(nombre,pais_id,creado_por,estado) values('"+this.getNombre()+"','"
+                +this.getPais_id()+"','"+this.getCreado_por()+"','activo')");
+    }
+    
+    public void delete(){
+        con.setInsertar("update Ciudades set estado='pasivo' where ciudad_id='"+this.getCiudad_id()+"'");
+    }
+    
+    public void update(){
+        con.setInsertar("update Ciudades set nombre='"+this.getNombre()+"',pais_id='"+this.getPais_id()+"' where ciudad_id='"+this.getCiudad_id()+"'");
     }
     
 }

@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Crear Equipo <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="#">Nuevo Equipo <span class="sr-only">(current)</span></a></li>
                         <br>
                         <br>
                         <li><a href="index.jsp">Regresar</a></li>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                    <h2 class="sub-header">Crear Equipo</h2>
+                    <h2 class="sub-header">Nuevo Equipo</h2>
                     <div class="table-responsive">
                         <form method="post" action="../ServletEquipo">
                             <table class="table table-striped">

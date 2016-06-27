@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="Anibal" content="">
-
-        <title>Crear Estadio</title>
+        
+        <title>Crear Pais</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="">Nuevo Estadio <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="">Nuevo Pais <span class="sr-only">(current)</span></a></li>
                         <br>
                         <br>
                         <li><a href="index.jsp">Regresar</a></li>
@@ -42,30 +42,27 @@
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                    <h2 class="sub-header">Nuevo Estadio</h2>
+                    <h2 class="sub-header">Nuevo Pais</h2>
                     <div class="table-responsive">
-                        <form method="post" action="../ServletEstadio">
+                        <form method="post" action="../ServletPais">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
-                                        <th>CIUDAD ID</th>
                                     </tr>
                                 </thead>
-
-                                <td><input type="text" name="nombre"></td>
-                                <td><select>Ciudad_id</select></td>
-
-                                <td><Button type="sumbit" class="btn btn-success" name="guardar">Guardar</button></td>
                                 
-                                </tr> 
+                                <td><input type="text" name="nombre"></td>
+                                
+
+                                <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>
+
                             </table>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="../template/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="../template/js/bootstrap.min.js"></script>
     </body>
 </html>
