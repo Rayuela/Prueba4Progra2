@@ -42,7 +42,7 @@
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
                         <li><a href="crear.jsp">Nuevo Equipo</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="reporte_Equipos.jsp">Reporte</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>
                     </ul>

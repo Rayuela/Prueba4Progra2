@@ -17,16 +17,16 @@
         <servlet-class>ServletEquipo</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletLogin</servlet-name>
-        <servlet-class>ServletLogin</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ServletCiudad</servlet-name>
         <servlet-class>ServletCiudad</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletPais</servlet-name>
         <servlet-class>ServletPais</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>ServletLogin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
@@ -45,16 +45,16 @@
         <url-pattern>/ServletEquipo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletLogin</servlet-name>
-        <url-pattern>/ServletLogin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ServletCiudad</servlet-name>
         <url-pattern>/ServletCiudad</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletPais</servlet-name>
         <url-pattern>/ServletPais</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ServletLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

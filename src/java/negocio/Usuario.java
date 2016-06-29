@@ -1,6 +1,10 @@
 package negocio;
 
 import accesodato.Conexion;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Usuario {
     private int usuario_id;
@@ -9,6 +13,31 @@ public class Usuario {
     private String fecha_nacimiento;
     private String estado;
     Conexion con;
+    
+    public static boolean checkUser(String usuario,String clave) 
+     {
+      boolean st =false;
+      try{
+
+	 //loading drivers for mysql
+         Class.forName("com.mysql.jdbc.Driver");
+
+ 	 //creating connection with the database 
+         Connection con=DriverManager.getConnection
+                        ("jdbc:mysql://localhost:3306/Prueba");
+         PreparedStatement ps =con.prepareStatement
+                             ("select * from Usuarios where usuario=? and clave=?");
+         ps.setString(1, usuario);
+         ps.setString(2, clave);
+         ResultSet rs =ps.executeQuery();
+         st = rs.next();
+        
+      }catch(Exception e)
+      {
+          e.printStackTrace();
+      }
+         return st;                 
+  }   
     
         public Usuario(){
             con = new Conexion();
@@ -65,5 +94,4 @@ public class Usuario {
     public void update(){
         con.setInsertar("update Usuarios set usuario='"+this.getUsuario()+"',clave='"+this.getClave()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"' where usuario_id='"+this.getUsuario_id()+"'");
     }
-    
 }

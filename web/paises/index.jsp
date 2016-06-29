@@ -42,7 +42,7 @@
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
                         <li><a href="crear.jsp">Nuevo Pais</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="reporte_Paises.jsp">Reporte</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>
                     </ul>
@@ -99,7 +99,7 @@
                                         out.println("<td>" + con.getResultado().getString("nombre") + "</td>");
                                         out.println("<td>" + con.getResultado().getString("creado_por") + "</td>");
                                         out.println("<td>" + "<a href='../ServletPais?eliminar=" + con.getResultado().getString("pais_id") + "'><button class='btn btn-danger'>Eliminar</button></a>" + "</td>");
-                                        out.println("<td>" + "<a href='editar.jsp?usuario_id=" + con.getResultado().getString("pais_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>"); 
+                                        out.println("<td>" + "<a href='editar.jsp?pais_id=" + con.getResultado().getString("pais_id") + "'><button class='btn btn-primary'>Editar</button></a>" + "</td>"); 
                                     %>
                                 </tr>
                                 <% }%>

@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Conexion {
     Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
+    private static Conexion micon;
 
     public Conexion() {
 
@@ -20,12 +19,19 @@ public class Conexion {
         String pass = "";
         String url = "jdbc:mysql://localhost:3306/Prueba";
         try {
+            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, pass);
 
         } catch (Exception ex) {
             System.out.println("Error de conexion!!" + ex.getMessage());
         }
+    }
+    public static synchronized Conexion getInstance(){
+        if(micon==null){
+            micon=new Conexion();
+        }
+        return micon;
     }
     
     public void setConsulta(String sql) {
@@ -49,6 +55,9 @@ public class Conexion {
         } catch (SQLException ex) {
         }
       
+    }
+    public Connection getConexion(){
+        return con;
     }
 
 }

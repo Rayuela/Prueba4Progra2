@@ -14,6 +14,8 @@
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -42,7 +44,7 @@
                     <ul class="nav nav-sidebar">
                         <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
                         <li><a href="crear.jsp">Nuevo Usuario</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="reporte_Usuarios.jsp">Reporte</a></li>
                         <br>
                         <li><a href="../inicio.jsp">Regresar</a></li>
                     </ul>
@@ -112,6 +114,8 @@
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <script src="../template/js/bootstrap.min.js"></script>
 
     </body>

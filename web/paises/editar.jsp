@@ -1,3 +1,4 @@
+<%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,13 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="Anibal" content="">
-
-        <title>Crear Ciudad</title>
+        
+        <title>Editar Pais</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -35,7 +34,7 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="">Nueva Ciudad <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="">Editar Pais <span class="sr-only">(current)</span></a></li>
                         <br>
                         <br>
                         <li><a href="index.jsp">Regresar</a></li>
@@ -44,51 +43,38 @@
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                    <h2 class="sub-header">Nueva Ciudad</h2>
+                    <h2 class="sub-header">Editar Pais</h2>
                     <div class="table-responsive">
-                        <form method="post" action="../ServletCiudad">
+                        <% String pais_id = request.getParameter("pais_id"); %>
+
+                        <form method="post" action="../ServletPais">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>NOMBRE</th>
                                         <th>PAIS ID</th>
-                                        <th>CREADO POR</th>
+                                        <th>NOMBRE</th>
                                     </tr>
                                 </thead>
+                                <td><input type="text" name="pais_id" readonly value="<% out.println("" + pais_id); %>"></td>
+                                    <% Conexion con = new Conexion();
+                                        con.setConsulta("select * from Paises where pais_id='" + pais_id + "'");
+                                        while (con.getResultado().next()) {
 
-                                <td><input type="text" name="nombre"></td>
-                                <td><input type="text" name="pais_id"></td>
-                                <!--<td><div class="form-group">
-                                        <select name="pais_id" id="servicios" class="form-control">
+                                    %>
 
-                                        </select> 
-                                    </div></td>
-                                 !-->
-                                <td><input type="text" name="creado_por"></td>
+                                <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
 
+                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
 
-                                <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>
-
+                                <% }%>
                             </table>
+
                         </form>
                     </div>
                 </div>
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="../template/js/bootstrap.min.js"></script>
-            <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-            <script>
-            $(document).ready(function () {
-                $('select').select2();
-                $('#servicios').append('<option> Seleccionar Pais</option>');
-                $.get("http://localhost:8080/AppJava01/Tarea", function (data, status) {
-                    $.each(data, function (i, item) {
-                        $('#servicios').append('<option value=' + item.pais_id + '>' + item.nombre + '</option>');
-                    });
-
-                });
-            });
-            </script>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../template/js/bootstrap.min.js"></script>
     </body>
 </html>

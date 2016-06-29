@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -26,14 +27,14 @@
                     <a class="navbar-brand" href="">Prueba 4 Progra 2</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right" method="pos" action="ServletLogin">
+                    <form class="navbar-form navbar-right" method="post" action="ServletLogin">
                         <div class="form-group">
                             <input type="text" placeholder="Usuario" name="usuario"class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Contraseña" name="contraseña" class="form-control">
+                            <input type="password" placeholder="Contraseña" name="clave" class="form-control">
                         </div>
-                        <a href="inicio.jsp"><button type="submit" class="btn btn-success">Entrar</button></a>
+                        <button type="submit" class="btn btn-success">Entrar</button>
 
                     </form>
                 </div>
