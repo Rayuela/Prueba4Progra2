@@ -54,7 +54,7 @@
                                 </thead>
 
                                 <td><input type="text" name="nombre"></td>
-                                <td><select>Ciudad_id</select></td>
+                                <td><input type="text" name="ciudad_id"></td>
 
                                 <td><Button type="sumbit" class="btn btn-success" name="guardar">Guardar</button></td>
                                 

@@ -56,7 +56,7 @@ public class Ciudad {
     }
         public void save(){
         con.setInsertar("insert into Ciudades(nombre,pais_id,creado_por,estado) values('"+this.getNombre()+"','"
-                +this.getPais_id()+"','"+this.getCreado_por()+"','activo')");
+                +this.getPais_id()+"','"+this.getCreado_por()+"','Activo')");
     }
     
     public void delete(){
@@ -64,7 +64,8 @@ public class Ciudad {
     }
     
     public void update(){
-        con.setInsertar("update Ciudades set nombre='"+this.getNombre()+"',pais_id='"+this.getPais_id()+"' where ciudad_id='"+this.getCiudad_id()+"'");
+        con.setInsertar("update Ciudades set nombre='"+this.getNombre()+"',pais_id='"+this.getPais_id()+"' "
+                + "where ciudad_id='"+this.getCiudad_id()+"'");
     }
     
 }

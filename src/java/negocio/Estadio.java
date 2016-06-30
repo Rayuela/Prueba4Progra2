@@ -36,7 +36,8 @@ public class Estadio {
     }
     
     public void save(){
-        con.setInsertar("insert into Estadios(nombre) values('"+this.getNombre()+"')");
+        con.setInsertar("insert into Estadios(nombre,ciudad_id) values('"+this.getNombre()+"','"
+                +this.getCiudad_id()+"')");
     }
     
     public void delete(){
@@ -44,7 +45,8 @@ public class Estadio {
     }
     
     public void update(){
-        con.setInsertar("update Estadios set nombre='"+this.getNombre()+",ciudad_id'"+this.getCiudad_id()+"' where estadio_id="+this.getEstadio_id()+"'");
+        con.setInsertar("update Estadios set nombre='"+this.getNombre()+"',ciudad_id='"+this.getCiudad_id()+"' "
+                + "where estadio_id="+this.getEstadio_id()+"'");
     }
     
 }

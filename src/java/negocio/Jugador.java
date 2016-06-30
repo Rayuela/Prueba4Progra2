@@ -82,8 +82,8 @@ public class Jugador {
     }
     
     public void save(){
-        con.setInsertar("insert into Jugadores(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por,estado,) values('"+this.getNombre()+"','"
-                +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"','activo')");
+        con.setInsertar("insert into Jugadores(nombre,apepat,apemat,fecha_nacimiento,equipo_id,creado_por,estado) values('"+this.getNombre()+"','"
+                +this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','"+this.getEquipo_id()+"','"+this.getCreado_por()+"','Activo')");
     }
     
     public void delete(){

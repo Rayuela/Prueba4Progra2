@@ -57,9 +57,10 @@
                                 </thead>
 
                                 <td><input type="text" name="nombre"></td>
-                                <td><input type="text" name="pais_id"></td>
-                                <!--<td><div class="form-group">
-                                        <select name="pais_id" id="servicios" class="form-control">
+                                <td><input type="text" name="pais_id"</td>
+                                <!--
+                                <td><div class="form-group">
+                                        <select name="pais_id" id="Pais" class="form-control">
 
                                         </select> 
                                     </div></td>
@@ -81,10 +82,10 @@
             <script>
             $(document).ready(function () {
                 $('select').select2();
-                $('#servicios').append('<option> Seleccionar Pais</option>');
-                $.get("http://localhost:8080/AppJava01/Tarea", function (data, status) {
+                $('#Pais').append('<option> Seleccionar Pais</option>');
+                $.get("http://localhost:8080/Prueba4Progra2/Tarea", function (data, status) {
                     $.each(data, function (i, item) {
-                        $('#servicios').append('<option value=' + item.pais_id + '>' + item.nombre + '</option>');
+                        $('#Pais').append('<option value=' + item.pais_id + '>' + item.nombre + '</option>');
                     });
 
                 });

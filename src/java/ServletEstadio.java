@@ -13,8 +13,10 @@ public class ServletEstadio extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             if(request.getParameter("guardar") != null){
                String nombre=request.getParameter("nombre");
+               int ciudad_id=Integer.parseInt(request.getParameter("ciudad_id"));
                Estadio stad=new Estadio();
                stad.setNombre(nombre);
+               stad.setCiudad_id(ciudad_id);
                stad.save();
                response.sendRedirect("estadios/index.jsp");
                

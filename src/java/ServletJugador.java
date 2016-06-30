@@ -33,7 +33,7 @@ public class ServletJugador extends HttpServlet {
                String nombre=request.getParameter("nombre"); 
                String apepat=request.getParameter("apepat");
                String apemat=request.getParameter("apemat");
-               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               String fecha_nacimiento=request.getParameter("fn");
                int equipo_id=Integer.parseInt(request.getParameter("equipo_id"));
                Jugador playd=new Jugador();
                playd.setJugador_id(jugador_id);

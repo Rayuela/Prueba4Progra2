@@ -37,7 +37,8 @@ public class Pais {
     }
     
         public void save(){
-        con.setInsertar("insert into Paises(nombre,creado_por,estado) values('"+this.getNombre()+"','"+this.getCreado_por()+"','activo')");
+        con.setInsertar("insert into Paises(nombre,creado_por,estado) values('"+this.getNombre()+"','"
+                +this.getCreado_por()+"','Activo')");
     }
     
     public void delete(){

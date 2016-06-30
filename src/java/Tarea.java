@@ -1,48 +1,41 @@
-
+import accesodato.Conexion;
+import com.google.gson.Gson;
+import java.util.ArrayList;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import negocio.Ciudad;
+import negocio.*;
 
-public class ServletCiudad extends HttpServlet {
+
+public class Tarea extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            if (request.getParameter("guardar") != null) {
-                String nombre = request.getParameter("nombre");
-                int pais_id = Integer.parseInt(request.getParameter("pais_id"));
-                String creado_por = request.getParameter("creado_por");
-                Ciudad ciu = new Ciudad();
-                ciu.setNombre(nombre);
-                ciu.setPais_id(pais_id);
-                ciu.setCreado_por(creado_por);
-                ciu.save();
-                response.sendRedirect("ciudades/index.jsp");
-
-            } else if (request.getParameter("editar") != null) {
-                int ciudad_id = Integer.parseInt(request.getParameter("ciudad_id"));
-                String nombre = request.getParameter("nombre");
-                int pais_id = Integer.parseInt(request.getParameter("pais_id"));
-                Ciudad ciu = new Ciudad();
-                ciu.setCiudad_id(ciudad_id);
-                ciu.setNombre(nombre);
-                ciu.setPais_id(pais_id);
-                ciu.update();
-                response.sendRedirect("ciudades/index.jsp");
-                
-            } else if (request.getParameter("eliminar") != null) {
-                int ciudad_id = Integer.parseInt(request.getParameter("eliminar"));
-                out.println("ELIMINAR ID:" + ciudad_id);
-                Ciudad ciu = new Ciudad();
-                ciu.setCiudad_id(ciudad_id);
-                ciu.delete();
-                response.sendRedirect("ciudades/index.jsp");
-            }
+        Conexion con = new Conexion();    
+        
+            if (request.getParameter("pais_id") != null) {
+                String pais_id = request.getParameter("pais_id");
+                con.setConsulta("select * from Paises where pais_id='" + pais_id + "'");
+                ArrayList lista = new ArrayList();
+                try {
+                    while (con.getResultado().next()) {
+                        Pais pa = new Pais();
+                        pa.setPais_id(con.getResultado().getInt("pais_id"));
+                        lista.add(pa);
+                    }
+                } catch (SQLException ex) {
+                }
+                String json = new Gson().toJson(lista);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write(json);
+        }
         }
     }
 

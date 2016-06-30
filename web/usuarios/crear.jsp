@@ -60,7 +60,7 @@
                                     <td><input type="date" name="fn"></td>
                                 
 
-                                <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>
+                                <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>                        
 
                             </table>
                         </form>
