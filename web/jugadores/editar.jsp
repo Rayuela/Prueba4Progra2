@@ -68,11 +68,11 @@
                                 <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
                                 <td><input type="text" name="apepat" value="<% out.println("" + con.getResultado().getString("apepat"));  %>"></td>
                                 <td><input type="text" name="apemat" value="<% out.println("" + con.getResultado().getString("apemat"));  %>"></td>
-                                <td><input type="date" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                                <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
                                 <td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
-
+                                <tr>
                                 <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-
+                                </tr>
 
                                 <% }%>
                             </table>

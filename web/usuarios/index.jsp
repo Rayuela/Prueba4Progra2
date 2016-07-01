@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="">Overview <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="">Resumen <span class="sr-only">(current)</span></a></li>
                         <li><a href="crear.jsp">Nuevo Usuario</a></li>
                         <li><a href="reporte_Usuarios.jsp">Reporte</a></li>
                         <br>

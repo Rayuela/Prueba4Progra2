@@ -49,11 +49,12 @@
                                 <thead>
                                     <tr>
                                         <th>NOMBRE</th>
+                                        <th>CREADO POR</th>
                                     </tr>
                                 </thead>
                                 
                                 <td><input type="text" name="nombre"></td>
-                                
+                                <td><input type="text" name="creado_por"></td>
 
                                 <td><Button type="submit" class="btn btn-success" name="guardar">Guardar</button></td>
 

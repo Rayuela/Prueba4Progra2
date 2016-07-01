@@ -1,6 +1,15 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <% 
+            boolean result=request.getAttribute("valido");
+                if(result==true){
+                    
+                }else{
+                    response.sendRedirect("inicio.jsp");
+                }
+        %>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,14 +36,14 @@
                     <a class="navbar-brand" href="">Prueba 4 Progra 2</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
+                    <form class="navbar-form navbar-right" method="post" action="ServletLogin">
                         <div class="form-group">
                             <input type="text" placeholder="Usuario" name="usuario"class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Contraseña" name="clave" class="form-control">
+                            <input type="password" placeholder="ContraseÃ±a" name="clave" class="form-control">
                         </div>
-                        <a href="inicio.jsp"<button type="submit" class="btn btn-success">Entrar</button></a>
+                        <button type="submit" class="btn btn-success">Entrar</button>
 
                     </form>
                 </div>
@@ -44,7 +53,7 @@
         <div class="jumbotron">
             <div class="container">
                 <h1>Bienvenido</h1>
-                <p>Pagina creada por Aníbal Barría para prueba 4 de Programación 2 Java Web Instituto INACAP año 2016.</p>
+                <p>Pagina creada por AnÃ­bal BarrÃ­a para prueba 4 de ProgramaciÃ³n 2 Java Web Instituto INACAP aÃ±o 2016.</p>
                 <br>
             </div>
         </div>
@@ -53,7 +62,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2>La U tiene estadio</h2>
-                    <p>La Universidad de Chile se complace anunciar su primer estadio en el conocido juego Minecraft.<br> <b>Ponto dirección IP.</b></p>
+                    <p>La Universidad de Chile se complace anunciar su primer estadio en el conocido juego Minecraft.<br> <b>Ponto direcciÃ³n IP.</b></p>
                     <p><a class="btn btn-default" href="http://lalegal.cl/noticia/1345" role="button">View details &raquo;</a></p>
                 </div>
                 
@@ -69,7 +78,7 @@
                 <hr>
 
                 <footer>
-                    <p>&copy; Aníbal Barría.</p>
+                    <p>&copy; AnÃ­bal BarrÃ­a.</p>
                 </footer>
             </div>
         </div>

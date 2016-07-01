@@ -65,13 +65,11 @@
                                         while (con.getResultado().next()) {
 
                                     %>
-
                                 <td><input type="text" name="usuario" value="<% out.println("" + con.getResultado().getString("usuario"));  %>"></td>
                                 <td><input type="password" name="clave" value="<% out.println("" + con.getResultado().getString("clave"));  %>"></td>
-                                <td><input type="date" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                                <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
 
                                 <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-
                                 <% }%>
                             </table>
 
