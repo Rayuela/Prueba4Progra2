@@ -1,15 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <% 
-            boolean result=request.getAttribute("valido");
-                if(result==true){
-                    
-                }else{
-                    response.sendRedirect("inicio.jsp");
-                }
-        %>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,24 +59,24 @@
                     <p>La Universidad de Chile se complace anunciar su primer estadio en el conocido juego Minecraft.<br> <b>Ponto dirección IP.</b></p>
                     <p><a class="btn btn-default" href="http://lalegal.cl/noticia/1345" role="button">View details &raquo;</a></p>
                 </div>
-                
-                 <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Chile Campeon de Copa America Centenario</h2>
-                    <p></p>
-                    <p><a class="btn btn-default" href="" role="button">View details &raquo;</a></p>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2>Chile Campeon de Copa America Centenario</h2>
+                            <p></p>
+                            <p><a class="btn btn-default" href="" role="button">View details &raquo;</a></p>
+                        </div>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                        <hr>
+
+                        <footer>
+                            <p>&copy; Aníbal Barría.</p>
+                        </footer>
+                    </div>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-                <hr>
-
-                <footer>
-                    <p>&copy; Aníbal Barría.</p>
-                </footer>
-            </div>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="template/js/bootstrap.min.js"></script>
-    </body>
-</html>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="template/js/bootstrap.min.js"></script>
+                </body>
+                </html>

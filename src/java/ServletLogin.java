@@ -1,5 +1,9 @@
+import accesodato.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +17,24 @@ public class ServletLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             HttpSession logeado = request.getSession(true);
-            logeado.setAttribute("valido",true);
+            String user=request.getParameter("usuario");
+            String pass=request.getParameter("clave");
+            Conexion con=new Conexion();
+            con.setConsulta("select * from Usuarios where usuario='"+user+"'");
+            try {
+                while(con.getResultado().next()){
+                    if(con.getResultado().getString("clave").equals(pass)){
+                        logeado.setAttribute("valido","true");
+                        response.sendRedirect("inicio.jsp");
+                    }else{
+                        logeado.setAttribute("valido","false");
+                        response.sendRedirect("index.jsp");
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ServletLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }
 
