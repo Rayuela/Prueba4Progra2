@@ -1,5 +1,14 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession logeado = request.getSession(true);
+    String result = (String) logeado.getAttribute("valido");
+    if (result.equals("true") & result != null) {
+
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,8 +18,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="Anibal" content="">
-        
-        <title>Editar Usuario</title>
+
+        <title>Editar Jugador</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
@@ -48,33 +57,44 @@
                         <% String jugador_id = request.getParameter("jugador_id"); %>
 
                         <form method="post" action="../ServletJugador">
-                            <table class="table table-striped">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>JUGADOR_ID</th>
-                                        <th>NOMBBRE</th>
-                                        <th>APEPAT</th>
-                                        <th>APEMAT</th>
-                                        <th>FECHA NACIMIENTO</th>
-                                        <th>EQUIPO ID</th>
+                                        <th>JUGADOR_ID</th>                             
+                                        <td><input type="text" name="jugador_id" readonly value="<% out.println("" + jugador_id); %>"></td>
                                     </tr>
-                                </thead>
-                                <td><input type="text" name="jugador_id" readonly value="<% out.println("" + jugador_id); %>"></td>
                                     <% Conexion con = new Conexion();
                                         con.setConsulta("select * from Jugadores where jugador_id='" + jugador_id + "'");
                                         while (con.getResultado().next()) {
 
                                     %>
-                                <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
-                                <td><input type="text" name="apepat" value="<% out.println("" + con.getResultado().getString("apepat"));  %>"></td>
-                                <td><input type="text" name="apemat" value="<% out.println("" + con.getResultado().getString("apemat"));  %>"></td>
-                                <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
-                                <td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
-                                <tr>
-                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-                                </tr>
+                                    <tr>
+                                        <th>NOMBRE</th>
+                                        <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>APEPAT</th>
+                                        <td><input type="text" name="apepat" value="<% out.println("" + con.getResultado().getString("apepat"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>APEMAT</th>
+                                        <td><input type="text" name="apemat" value="<% out.println("" + con.getResultado().getString("apemat"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>FECHA NACIMIENTO</th>
+                                        <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>EQUIPO ID</th>
+                                        <td><input type="text" name="equipo_id" value="<% out.println("" + con.getResultado().getInt("equipo_id"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
+                                    </tr>
 
-                                <% }%>
+                                    <% }%>
+                                </thead>
                             </table>
 
                         </form>

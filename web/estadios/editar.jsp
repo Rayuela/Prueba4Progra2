@@ -1,5 +1,14 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession logeado = request.getSession(true);
+    String result = (String) logeado.getAttribute("valido");
+    if (result.equals("true") & result != null) {
+
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,28 +57,32 @@
                         <% String estadio_id = request.getParameter("estadio_id"); %>
 
                         <form method="post" action="../ServletEstadio">
-                            <table class="table table-striped">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>ESTADIO ID</th>
+                                        <th>ESTADIO ID</th>              
+                                        <td><input type="text" name="estadio_id" readonly value="<% out.println("" + estadio_id); %>"></td>
+                                            <% Conexion con = new Conexion();
+                                                con.setConsulta("select * from Estadios where estadio_id='" + estadio_id + "'");
+                                                while (con.getResultado().next()) {
+
+                                            %>
+                                    </tr>
+                                    <tr>
                                         <th>NOMBRE</th>
+                                        <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
+                                    </tr>
+                                    <tr>
                                         <th>CIUDAD ID</th>
-                                    </tr>                    
+                                        <td><input type="text" name="ciudad_id" value="<% out.println("" + con.getResultado().getInt("ciudad_id")); %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
+                                    </tr>
+
+                                    <% }%>
                                 </thead>
-                                <td><input type="text" name="estadio_id" readonly value="<% out.println("" + estadio_id); %>"></td>
-                                    <% Conexion con = new Conexion();
-                                        con.setConsulta("select * from Estadios where estadio_id='"+estadio_id+"'");
-                                        while (con.getResultado().next()) {
-
-                                    %>
-
-                                <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
-                                <td><input type="text" name="ciudad_id" value="<% out.println("" + con.getResultado().getInt("ciudad_id")); %>"></td>
-
-                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-
-
-                                <% }%>
                             </table>
 
                         </form>

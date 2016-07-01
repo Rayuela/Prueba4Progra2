@@ -1,5 +1,14 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession logeado = request.getSession(true);
+    String result = (String) logeado.getAttribute("valido");
+    if (result.equals("true") & result != null) {
+
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,12 +18,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="Anibal" content="">
-        
+
         <title>Editar Usuario</title>
 
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
         <link href="../template/css/dashboard.css" rel="stylesheet">
-        
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     </head>
     <body>
@@ -50,27 +59,35 @@
                         <% String usuario_id = request.getParameter("usuario_id"); %>
 
                         <form method="post" action="../ServletUsuario">
-                            <table class="table table-striped">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>USUARIO_ID</th>
-                                        <th>USUARIO</th>
-                                        <th>CLAVE</th>
-                                        <th>FECHA NACIMIENTO</th>
+                                        <th>USUARIO ID</th>
+                                        <td><input type="text" name="usuario_id" readonly value="<% out.println("" + usuario_id); %>"></td>
+                                            <% Conexion con = new Conexion();
+                                                con.setConsulta("select * from Usuarios where usuario_id='" + usuario_id + "'");
+                                                while (con.getResultado().next()) {
+
+                                            %>
                                     </tr>
+                                    <tr>
+                                        <th>NOMBRE</th>
+                                        <td><input type="text" name="usuario" value="<% out.println("" + con.getResultado().getString("usuario"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>CLAVE</th>
+                                        <td><input type="password" name="clave" value="<% out.println("" + con.getResultado().getString("clave"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>FECHA NACIMIENTO</th>
+                                        <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                        <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
+                                    </tr>
+                                    <% }%>
                                 </thead>
-                                <td><input type="text" name="usuario_id" readonly value="<% out.println("" + usuario_id); %>"></td>
-                                    <% Conexion con = new Conexion();
-                                        con.setConsulta("select * from Usuarios where usuario_id='" + usuario_id + "'");
-                                        while (con.getResultado().next()) {
-
-                                    %>
-                                <td><input type="text" name="usuario" value="<% out.println("" + con.getResultado().getString("usuario"));  %>"></td>
-                                <td><input type="password" name="clave" value="<% out.println("" + con.getResultado().getString("clave"));  %>"></td>
-                                <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
-
-                                <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-                                <% }%>
                             </table>
 
                         </form>

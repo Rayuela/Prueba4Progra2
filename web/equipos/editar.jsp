@@ -1,5 +1,14 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession logeado = request.getSession(true);
+    String result = (String) logeado.getAttribute("valido");
+    if (result.equals("true") & result!=null ) {
+
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,14 +57,10 @@
                         <% String equipo_id = request.getParameter("equipo_id"); %>
 
                         <form method="post" action="../ServletEquipo">
-                            <table class="table table-striped">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>EQUIPO ID</th>
-                                        <th>NOMBRE</th>
-                                        <th>ESTADIO ID</th>                                               
-                                    </tr>
-                                </thead>
+                                        <th>EQUIPO ID</th>                                          
                                 <td><input type="text" name="estadio_id" readonly value="<% out.println("" + equipo_id); %>"></td>
                                     <% Conexion con = new Conexion();
                                         con.setConsulta("select * from Equipos where equipo_id='" + equipo_id + "'");
@@ -63,15 +68,22 @@
                                         while (con.getResultado().next()) {
 
                                     %>
-
+                                    </tr>
+                                    <tr>
+                                        <th>NOMBRE</th>
                                 <td><input type="text" name="nombre" value="<% out.println("" + con.getResultado().getString("nombre"));  %>"></td>
-
+                                    </tr>
+                                    <tr>
+                                        <th>ESTADIO ID</th>
                                 <td><input type="text" name="estadio_id" value="<% out.println("" + con.getResultado().getInt("estadio_id"));  %>"></td>
-
+                                    </tr>
+                                    <tr>
+                                        <th></th>
                                 <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
-
+                                    </tr>
 
                                 <% }%>
+                            </thead>
                             </table>
 
                         </form>

@@ -1,5 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,7 +75,8 @@
                         </footer>
                     </div>
                 </div>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                <script src="template/js/bootstrap.min.js"></script>
-                </body>
-                </html>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="template/js/bootstrap.min.js"></script>
+    </body>
+</html>

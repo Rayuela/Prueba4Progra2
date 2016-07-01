@@ -1,5 +1,14 @@
 <%@page import="accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    HttpSession logeado = request.getSession(true);
+    String result = (String) logeado.getAttribute("valido");
+    if (result.equals("true") & result!=null ) {
+
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
