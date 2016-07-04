@@ -83,7 +83,7 @@
                                         <td><input type="text" name="fn" value="<% out.println("" + con.getResultado().getString("fecha_nacimiento"));  %>"></td>
                                     </tr>
                                     <tr>
-                                        <th>
+                                        <th><a href="usuarios/index.jsp"><button type="submit" class="btn btn-danger" name="cancelar">Cancelar</button></a></th>
                                         <td><Button type="submit" class="btn btn-success" name="editar">Actualizar</button></td>
                                     </tr>
                                     <% }%>
